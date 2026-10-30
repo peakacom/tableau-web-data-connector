@@ -1,0 +1,19 @@
+name: Check
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: npm ci --no-audit --no-fund
+        working-directory: connector
+      - run: npm test && npm run typecheck && npm run build
+        working-directory: connector

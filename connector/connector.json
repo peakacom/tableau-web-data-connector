@@ -1,0 +1,28 @@
+{
+  "name": "Peaka Web Data Connector",
+  "version": "1.0.3",
+  "tableau-version": {
+    "min": "2023.3"
+  },
+  "vendor": {
+    "name": "Peaka",
+    "support-link": "https://www.peaka.com",
+    "email": "info@peaka.com"
+  },
+  "permission": {
+    "api": {
+      "https://*/api/v1/": [
+        "GET",
+        "POST",
+        "OPTIONS"
+      ]
+    }
+  },
+  "auth": {
+    "type": "custom"
+  },
+  "window": {
+    "height": 800,
+    "width": 1400
+  }
+}
